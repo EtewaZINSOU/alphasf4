@@ -4,26 +4,20 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Twig\Environment;
 
-class PageController
+class PageController extends Controller
 {
     /**
-     * @Route("/page")
-     * @param Environment $twig
+     * @Route("/", name="index")
      * @return Response
      */
-    public function number(Environment $twig)
+    public function index()
     {
-        $number = mt_rand(0, 100);
-
-        return new Response($twig->render('page.html.twig',['number' => $number]));
-
-//        return new Response(
-//            '<html><body>Lucky number: '.$number.'</body></html>'
-//        );
+        return $this->render('index.html.twig');
     }
+
 
 }
