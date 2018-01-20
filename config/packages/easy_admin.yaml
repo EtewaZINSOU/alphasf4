@@ -1,4 +1,9 @@
 easy_admin:
+    design:
+        brand_color: 'red'
+        brand_color: 'rgba(26, 188, 156, 0.85)'
+        # 'dark' is the default value
+        color_scheme: 'light'
     entities:
         - App\Entity\Product
         - App\Entity\User
